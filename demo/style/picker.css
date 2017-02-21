@@ -1,0 +1,221 @@
+.gearArea {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9900;
+  overflow: hidden;
+  animation-fill-mode: both
+}
+
+.areaCtrl {
+  vertical-align: middle;
+  background-color: #d5d8df;
+  color: #000;
+  margin: 0;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 9901;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0)
+}
+
+.slideInUp {
+  animation: slideInUp .3s;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0)
+  }
+  to {
+    transform: translate3d(0, 0, 0)
+  }
+}
+
+.areaRoll {
+  display: flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: transparent;
+  -webkit-mask: -webkit-gradient(linear, 0% 50%, 0% 100%, from(#debb47), to(rgba(36, 142, 36, 0)));
+  -webkit-mask: -webkit-linear-gradient(top, #debb47 50%, rgba(36, 142, 36, 0))
+}
+
+.areaRoll>div {
+  font-size: 1.6em;
+  height: 10em;
+  float: left;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  flex: 1
+}
+
+.areaRoll>div .gear {
+  width: 100%;
+  float: left;
+  position: absolute;
+  z-index: 9902;
+  margin-top: 4em
+}
+
+.lareaRollMask {
+  -webkit-mask: -webkit-gradient(linear, 0% 40%, 0% 0%, from(#debb47), to(rgba(36, 142, 36, 0)));
+  -webkit-mask: -webkit-linear-gradient(bottom, #debb47 50%, rgba(36, 142, 36, 0));
+  padding: 0
+}
+
+.areaGrid {
+  position: relative;
+  top: 4em;
+  width: 100%;
+  height: 2em;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 0;
+  border-top: 1px solid #abaeb5;
+  border-bottom: 1px solid #abaeb5
+}
+
+.areaRoll>div:nth-child(3) .areaGrid>div {
+  left: 42%
+}
+
+.areaBtn {
+  color: #fff;
+  font-size: 1.6em;
+  line-height: 1em;
+  text-align: center;
+  padding: .8em 1em
+}
+
+.areaBtnBox:before,
+.areaBtnBox:after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: #96979b;
+  z-index: 15;
+  transform: scaleY(0.33)
+}
+
+.areaBtnBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: #5caee8;
+  position: relative
+}
+
+.areaBtnBox:before {
+  left: 0;
+  top: 0;
+  transform-origin: 50% 20%
+}
+
+.areaBtnBox:after {
+  left: 0;
+  bottom: 0;
+  transform-origin: 50% 70%
+}
+
+.tooth {
+  height: 2em;
+  line-height: 2em;
+  text-align: center;
+  display: flex;
+  line-clamp: 1;
+  flex-direction: column;
+  overflow: hidden
+}
+
+.icon-loan-more {
+  display: inline-block;
+  margin-left: 6px;
+  color: #6a6a6a;
+  font-size: .14rem;
+  margin-top: .03rem;
+}
+
+.icon-loan-more:before {
+  content: "\e901";
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased
+}
+
+.v-picker.cell_box {
+  padding: 0 0.18rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+v-picker.cell_box:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid #D9D9D9;
+  color: #D9D9D9;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+.v-picker .cell_primary {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.v-picker .cell_ft {
+  text-align: right;
+}
+
+.v-picker .cell_i {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.flex {
+  display: flex;
+}
+
+.v-picker input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: 1.41176471em;
+  line-height: 1.41176471;
+}

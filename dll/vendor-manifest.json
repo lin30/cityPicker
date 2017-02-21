@@ -1,0 +1,21 @@
+{
+  "name": "vendor",
+  "content": {
+    "./node_modules/process/browser.js": {
+      "id": "./node_modules/process/browser.js",
+      "meta": {}
+    },
+    "./node_modules/vue-router/dist/vue-router.common.js": {
+      "id": "./node_modules/vue-router/dist/vue-router.common.js",
+      "meta": {}
+    },
+    "./node_modules/vue/dist/vue.js": {
+      "id": "./node_modules/vue/dist/vue.js",
+      "meta": {}
+    },
+    "./node_modules/webpack/buildin/global.js": {
+      "id": "./node_modules/webpack/buildin/global.js",
+      "meta": {}
+    }
+  }
+}
