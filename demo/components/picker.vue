@@ -4,8 +4,7 @@
       <p style="font-size:0.15rem;">{{title}}</p>
     </div>
     <div class="cell_ft">
-      <!--<div class="flex" @touchstart="showPicker">-->
-      <div style="text-align:right;display:flex;" @touchstart="showPicker">
+      <div style="text-align:right;" class="flex" @touchstart="showPicker">
         <input :id="'name-box-' + uuid" class="cell_primary" value="请选择" style="border:none;text-align:right;font-size:0.14rem;color: #999999;" @input="getVal" readonly="readonly">
         <i class="icon-loan-more"></i>
       </div>
