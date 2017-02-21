@@ -145,8 +145,6 @@
   display: inline-block;
   margin-left: 6px;
   color: #6a6a6a;
-  font-size: .14rem;
-  margin-top: .03rem;
 }
 
 .icon-loan-more:before {
@@ -166,7 +164,6 @@
 }
 
 .v-picker.cell_box {
-  padding: 0 0.18rem;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -209,7 +206,7 @@ v-picker.cell_box:before {
 }
 
 .v-picker input {
-  width: 100%;
+  width: 80%;
   border: 0;
   outline: 0;
   -webkit-appearance: none;
