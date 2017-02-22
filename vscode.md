@@ -1,5 +1,4 @@
-## vscode beautify settings
-
+## vscode user settings for beautify
 ```
 "files.associations": {
         "*.vue": "vue"
