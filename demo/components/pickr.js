@@ -336,13 +336,18 @@ MobileArea.prototype = {
       name: _self.trigger.value,
       id: _self.trigger.getAttribute('codeStr')
     }
-    var evt = new CustomEvent('input')
+    // var evt = new CustomEvent('input')
+    // CustomEvent不兼容低版本
+    var evt = document.createEvent('CustomEvent')
+    evt.initCustomEvent('input', true, true, { detail: '' })
     _self.trigger.dispatchEvent(evt)
   },
   close: function(e) {
     e.preventDefault()
     var _self = this
-    var evt = new CustomEvent('input')
+    // var evt = new CustomEvent('input')
+    var evt = document.createEvent('Event')
+    evt.initEvent('input', true, true)
     if (this.location) {
       _self.setLocation(this.location)
     }

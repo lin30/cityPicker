@@ -116,7 +116,8 @@
   justify-content: space-between;
   align-items: stretch;
   background-color: #5caee8;
-  position: relative
+  position: relative;
+  z-index: 9903;
 }
 
 .areaBtnBox:before {
