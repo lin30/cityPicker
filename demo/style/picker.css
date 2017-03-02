@@ -45,7 +45,7 @@
   display: flex;
   width: 100%;
   height: auto;
-  overflow: hidden;
+  /*overflow: hidden;*/
   background-color: transparent;
   -webkit-mask: -webkit-gradient(linear, 0% 50%, 0% 100%, from(#debb47), to(rgba(36, 142, 36, 0)));
   -webkit-mask: -webkit-linear-gradient(top, #debb47 50%, rgba(36, 142, 36, 0))
@@ -57,7 +57,7 @@
   float: left;
   background-color: transparent;
   position: relative;
-  overflow: hidden;
+  /*overflow: hidden;*/
   flex: 1
 }
 
