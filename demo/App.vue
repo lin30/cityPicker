@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <!--<picker title="居住地址" :location="location" @get-val="addressPick"></picker>-->
-    <div class="select" @click="showPicker(0)" ref="select0">btn</div>
+    <div class="select" @click="showPicker(0)" ref="select0"><button> 局部调用 </button></div>
+    <br/>
+    <div class="select" @click="showPicker(1)" ref="select0"><button> 全局调用</button> </div>
     <picker @select="handleSelect" :selected-index="[2]"
             ref="picker0"></picker>
   </div>
@@ -68,6 +70,12 @@
       value: 15
     }
   ]
+  let data2 = [
+    {
+      text: '全局组件调用',
+      value: '11'
+    }
+  ]
   export default {
     data() {
       return {
@@ -79,18 +87,32 @@
       }
     },
     mounted() {
+      const props = {
+        data: [data2]
+      }
+      const on = { 
+        select: (a, b, c)=> { console.log(a[0], b[0], c[0]) } 
+      } 
+      // 全局组件调用
+      const picker = this.$picker(props, on)
+      picker.show()
+      // HTML 标签调用组件
       this.$refs.picker0.setData([data1])
     },
     components: {
-      Picker
+      // Picker
     },
     methods: {
       addressPick(name, code) {
         console.log(name, code)
       },
       showPicker(index) {
-        let picker = this.$refs['picker' + index]
-        picker.show()
+        if (index === 0) {
+          let picker = this.$refs['picker' + index]
+          picker.show()
+        } else {
+          this.$picker().show()
+        }
       },
       handleSelect(val, ind, text) {
         this.$refs.picker0.setData([])
@@ -104,7 +126,8 @@
   #app {
     width: 80%;
     margin: 0 auto;
-    border-bottom: 1px solid #eee;
   }
-
+  .select button {
+    border: 1px solid red;
+  }
 </style>

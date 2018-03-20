@@ -27,7 +27,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import BScroll from './bscroll.min.js'
+  import BScroll from './bscroll.js'
 
   const STATE_HIDE = 0
   const STATE_SHOW = 1
@@ -79,7 +79,6 @@
       }
     },
     created() {
-      console.log(this.data)
       if (!this.pickerSelectedIndex.length) {
         this.pickerSelectedIndex = []
         for (let i = 0; i < this.pickerData.length; i++) {
@@ -125,7 +124,6 @@
           return
         }
         this.state = STATE_SHOW
-
         if (!this.wheels || this.dirty) {
           this.$nextTick(() => {
             this.wheels = []
