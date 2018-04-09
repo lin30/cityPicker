@@ -11,7 +11,7 @@ module.exports = {
   entry: './demo/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    // publicPath: './',/\
     filename: '[name].[hash].js'
   },
   module: {

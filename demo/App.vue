@@ -3,13 +3,15 @@
     <!--<picker title="居住地址" :location="location" @get-val="addressPick"></picker>-->
     <div class="select" @click="showPicker(0)" ref="select0"><button> 局部调用 </button></div>
     <br/>
-    <div class="select" @click="showPicker(1)" ref="select0"><button> 全局调用</button> </div>
-    <picker @select="handleSelect" :selected-index="[2]"
-            ref="picker0"></picker>
+    <!--<div class="select" @click="showPicker(1)" ref="select0"><button> 全局调用</button> </div>-->
+    <cas-picker @select="handleSelect" :selected-index="[0,1,0]"
+            ref="picker0" :alias="{value:'id', text: 'name'}"></cas-picker>
   </div>
 </template>
 <script>
+  import json from './components/data.json'
   import Picker from './components/bscroll/picker.vue'
+  import casPicker from './components/casasualPicker'
   let data1 = [
     {
       text: '剧毒',
@@ -83,24 +85,25 @@
           id: '140000 141100 141121',
           name: '山西省 吕梁市 文水县'
         },
-        data1
+        json
       }
     },
     mounted() {
-      const props = {
-        data: [data2]
-      }
-      const on = { 
-        select: (a, b, c)=> { console.log(a[0], b[0], c[0]) } 
-      } 
-      // 全局组件调用
-      const picker = this.$picker(props, on)
-      picker.show()
       // HTML 标签调用组件
-      this.$refs.picker0.setData([data1])
+      this.$refs.picker0.setData(this.json)
+      // const props = {
+      //   data: [data2]
+      // }
+      // const on = { 
+      //   select: (a, b, c)=> { console.log(a[0], b[0], c[0]) } 
+      // } 
+      // 全局组件调用
+      // const picker = this.$picker(props, on)
+      // picker.show()
     },
     components: {
-      // Picker
+      Picker,
+      casPicker
     },
     methods: {
       addressPick(name, code) {
@@ -115,7 +118,6 @@
         }
       },
       handleSelect(val, ind, text) {
-        this.$refs.picker0.setData([])
         console.log(val[0], ind[0], text[0])
       }
     }
